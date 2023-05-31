@@ -13,11 +13,14 @@ class Dimension {
     this.RC5 =  2.236;
 
     this.dArea = this.size / this.RC5 * ratio;
+    this.rArea = this.dArea / 2;
     this.dBall = this.dArea / this.RC5;
     this.rBall = this.dBall / 2;
     this.dTarg = this.dBall / this.RC5;
+    this.rTarg = this.dTarg / 2;
     this.dCurs = this.dTarg / this.RC5;
-    
+    this.rCurs = this.dCurs / 2;
+
     this.tBord = this.size / 10;
         
     this.capturMax = this.size / 3;

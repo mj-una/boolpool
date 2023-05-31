@@ -1,8 +1,8 @@
 /////////////////////////////////////////////////////////////////////////////////
 // PoolBool v0.3.5
 let p;
-let renderSize = 300;
-let internalSize = renderSize;
+let renderSize;
+let internalSize = 600;
 
 const c1 = [84, 91, 119];
 const c0 = [55, 66, 89];
@@ -10,12 +10,15 @@ const c0 = [55, 66, 89];
 let circlesRatio = 1.2;
 let colorContrast = 80;
 
+let randomTargets = true;
+
 let invVelLim = 20; // top limit in map() = size / maxVel --> its inversely proportional
 let nextVelFac = 0.962; // next v = actual v * (1 - [friction as a percentage]) --> factor
   
 let dm, p1, p0, prep, evltr, table, curs;
 
 const targets = [];
+const areas = [];
 const pages = [];
 const btn = [];
 
@@ -27,16 +30,10 @@ let nrTurn = 1;
 // MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 
 function renderSetup() {
-  dm.extSize();
 
-  if (windowWidth > windowHeight) {
-      renderSize = Math.trunc(windowHeight);
-    }
-    else {
-      renderSize = Math.trunc(windowWidth);
-    }
+  if (windowWidth > windowHeight) renderSize = Math.trunc(windowHeight);
+  else renderSize = Math.trunc(windowWidth);
 
-  // responsive
   document.getElementById("cont").style.backgroundColor = "rgb(66, 46, 47)";
   document.getElementById("cont").style.width = "100vw";
   document.getElementById("cont").style.height = "100vh";
@@ -54,9 +51,9 @@ function renderSetup() {
 }
 
 function setup() {
+
   p = new Po();
   dm = new Dimension(internalSize, circlesRatio, colorContrast, invVelLim);
-  
   
   createCanvas(dm.size, dm.size);
   renderSetup();
@@ -70,9 +67,14 @@ function setup() {
   table = new Table();
   curs = new DotCursor();
   
-  // 0 UL, 1 UR, 2 DR, 3 DL
+  // 0 UpLeft, 1 UpRight, 2 DownRright, 3 DownLeft
   for (let i = 0; i < 4; i++) {
     targets[i] = new Target(i);  
+  }
+
+  // 0 UpLeft, 1 UpRight, 2 DownRright, 3 DownLeft
+  for (let i = 0; i < 4; i++) {
+    areas[i] = new Area(i);  
   }
   
   // 0 intro, 1 game, 2 menu, 3 info2, 4 opc2, 5 tutor, 6 info1, 7 opc1*, 8 opc1, 9 vict
@@ -93,12 +95,15 @@ function setup() {
 function draw() {
   
   if (nav == 1) {
+    evltr.turn(turn);
     if (motion == 1) prep.update();
     else if (motion == 2) {
       p1.update(nextVelFac);
       p0.update(nextVelFac);
       evltr.ballCollision();
-      evltr.targetCollision(); 
+      for (let i = 0; i < 4; i++) {
+        targets[i].collision(i, targets[i].x, targets[i].y);
+      }
       evltr.velOver();
       if (evltr.endTurn()) motion = 3;
       else motion = 2;
@@ -106,9 +111,7 @@ function draw() {
     else if (motion == 3) {
       if (evltr.maxScore()) nav = 9;
       else {
-        for (let i = 0; i < 4; i++) {
-          targets[i].update();
-        }
+        for (let i = 0; i < 4; i++) {targets[i].update(i);}
       }
       motion = 0;
       turn = !turn;
@@ -148,23 +151,10 @@ function mouseReleased() {
       }
     }
   }
-    /*
-    else if (btn[3].is()) nav = 6;
-    else if (motion == 0 && btn[0].is()) {
-      prep = new Prepare();
-      motion = 1;
-    }
-  }
-  else {
-    if (btn[1].is && btn[1].wP) pages[nav].btn1();
-    if (btn[2].is && btn[2].wP) pages[nav].btn2();
-    if (btn[3].is && btn[3].wP) pages[nav].btn3();
-  }*/
 }
 
 function mouseMoved() {
-  //motion = 0; ////////////////// TEST
-  //curs.mov();
+  curs.mov();
 }
 
 function windowResized() {
@@ -179,7 +169,8 @@ function test() {
   push();
   background(92, 137, 132);
   for (let i = 0; i < 4; i++) {
-    targets[i].display();  
+    targets[i].display(targets[i].x, targets[i].y);
+    // p.p(targets[i].x, targets[i].y);
   }
   p1.display(c1);
   p0.display(c0);

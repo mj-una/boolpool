@@ -1,7 +1,8 @@
 class Evaluator {
   
-  constructor() {
-  
+  turn(t) {
+    if (t) this.id = 1;
+    else this.id = 0;
   }
   
   /*
@@ -63,9 +64,6 @@ class Evaluator {
 
     p.p("evltr.ballCollision()");
 
-  }
-
-  targetCollision () {
   }
 
   velOver() {
