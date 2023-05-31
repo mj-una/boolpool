@@ -1,12 +1,11 @@
 /////////////////////////////////////////////////////////////////////////////////
 // PoolBool v0.3.5
 let p;
-let renderSize = 410;
+let renderSize = 300;
+let internalSize = renderSize;
 
 const c1 = [84, 91, 119];
 const c0 = [55, 66, 89];
-
-let internalSize = renderSize;
 
 let circlesRatio = 1.2;
 let colorContrast = 80;
@@ -30,6 +29,13 @@ let nrTurn = 1;
 function renderSetup() {
   dm.extSize();
 
+  if (windowWidth > windowHeight) {
+      renderSize = Math.trunc(windowHeight);
+    }
+    else {
+      renderSize = Math.trunc(windowWidth);
+    }
+
   // responsive
   document.getElementById("cont").style.backgroundColor = "rgb(66, 46, 47)";
   document.getElementById("cont").style.width = "100vw";
@@ -41,24 +47,19 @@ function renderSetup() {
   document.getElementById("cont").style.alignItems = "center";
   document.getElementById("cont").style.overflow = "hidden";
 
-  if (windowWidth > windowHeight ) {
-    document.getElementById("defaultCanvas0").style.height = "96vh";
-    document.getElementById("defaultCanvas0").style.width = "96vh";
-    document.getElementById("defaultCanvas0").style.margin = "2vh";
-  } else {
-    document.getElementById("defaultCanvas0").style.height = "96vw";
-    document.getElementById("defaultCanvas0").style.width = "96vw";
-    document.getElementById("defaultCanvas0").style.margin = "2vw";
-  }
+  document.getElementById("defaultCanvas0").style.height = renderSize + "px";
+  document.getElementById("defaultCanvas0").style.width = renderSize + "px";
+  document.getElementById("defaultCanvas0").style.margin = renderSize + "px";
+  
 }
 
 function setup() {
   p = new Po();
   dm = new Dimension(internalSize, circlesRatio, colorContrast, invVelLim);
   
+  
+  createCanvas(dm.size, dm.size);
   renderSetup();
-  createCanvas(dm.size, dm.size);
-  createCanvas(dm.size, dm.size);
   
   noCursor();
   colorMode(RGB, 255);
@@ -165,6 +166,12 @@ function mouseMoved() {
   //motion = 0; ////////////////// TEST
   //curs.mov();
 }
+
+function windowResized() {
+    renderSetup();
+    resizeCanvas(renderSize, renderSize);
+    setup();
+  }
 
 // MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
   
