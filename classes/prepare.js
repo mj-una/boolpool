@@ -49,8 +49,10 @@ class Prepare {
   display(turn) {
     
     noFill();
-    stroke(turn ? dm.dark : dm.light, this.cancel ? dm.tran : 255);
-    
+    //stroke(turn ? (84, 91, 119) : (55, 66, 89), this.cancel ? dm.tran : 255);
+    if (turn) stroke(84, 91, 119, this.cancel ? dm.tran : 255);
+    else stroke(55, 66, 89, this.cancel ? dm.tran : 255);
+
     strokeWeight(dm.s100);
     line(this.access_x, this.access_y, mouseX, mouseY);
        
@@ -59,7 +61,7 @@ class Prepare {
     
     // test
       
-    fill(200, 200, 10, 200);
+    fill(66, 46, 47);
     noStroke();
     circle(mouseX, mouseY, 25);
   }

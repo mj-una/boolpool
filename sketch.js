@@ -3,6 +3,9 @@
 let p;
 let renderSize = 410;
 
+const c1 = [84, 91, 119];
+const c0 = [55, 66, 89];
+
 let internalSize = renderSize;
 
 let circlesRatio = 1.2;
@@ -26,7 +29,27 @@ let nrTurn = 1;
 
 function renderSetup() {
   dm.extSize();
-  // DOM
+
+  // responsive
+  document.getElementById("cont").style.backgroundColor = "rgb(66, 46, 47)";
+  document.getElementById("cont").style.width = "100vw";
+  document.getElementById("cont").style.height = "100vh";
+  document.getElementById("cont").style.margin = "0";
+  document.getElementById("cont").style.padding = "0";
+  document.getElementById("cont").style.display = "flex";
+  document.getElementById("cont").style.justifyContent = "center";
+  document.getElementById("cont").style.alignItems = "center";
+  document.getElementById("cont").style.overflow = "hidden";
+
+  if (windowWidth > windowHeight ) {
+    document.getElementById("defaultCanvas0").style.height = "96vh";
+    document.getElementById("defaultCanvas0").style.width = "96vh";
+    document.getElementById("defaultCanvas0").style.margin = "2vh";
+  } else {
+    document.getElementById("defaultCanvas0").style.height = "96vw";
+    document.getElementById("defaultCanvas0").style.width = "96vw";
+    document.getElementById("defaultCanvas0").style.margin = "2vw";
+  }
 }
 
 function setup() {
@@ -38,6 +61,7 @@ function setup() {
   createCanvas(dm.size, dm.size);
   
   noCursor();
+  colorMode(RGB, 255);
 
   p1 = new Player(true);
   p0 = new Player(false);
@@ -146,12 +170,12 @@ function mouseMoved() {
   
 function test() {
   push();
-  background(130);
+  background(92, 137, 132);
   for (let i = 0; i < 4; i++) {
     targets[i].display();  
   }
-  p1.display();
-  p0.display();
+  p1.display(c1);
+  p0.display(c0);
   if (motion == 1) prep.display(turn);
   pop();
   p.p("FINAL:sketch.test", "  nav: ", nav, "  motion: ", motion);
