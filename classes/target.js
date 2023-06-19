@@ -120,10 +120,16 @@ class Target {
     this.collisioned = false;
   }
 
-  display(p, q) {
+  display() {
     if (this.state) {
-      fill(0, 100);
-      circle(p, q, dm.dTarg);
+      push();
+
+      noStroke();
+
+      fill(turn ? dm.dark : dm.light, dm.tr_max());
+      // fill(0, 100);
+      circle(this.x, this.y, dm.dTarg);
+      pop();
     }
   }
 }

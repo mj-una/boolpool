@@ -4,59 +4,53 @@ class Evaluator {
     if (t) this.id = 1;
     else this.id = 0;
   }
-  
-  /*
-  this.v1x = p1.vel_x;
-  this.v1y = p1.vel_y;
-  this.v0x = p0.vel_x;
-  this.v0y = p0.vel_y;
-  */
 
   ballCollision() {
     
     if (dist(p1.ap_x, p1.ap_y, p0.ap_x, p0.ap_y) <= dm.dBall) {
       
-      // angulo colision
-      this.angCol = atan2(p0.ap_y - p1.ap_y, p0.ap_x - p1.ap_x);
-      this.cosAC = cos(this.angCol);
-      this.sinAC = sin(this.angCol);
+      // angle collision
+      let angCol = atan2(p0.ap_y - p1.ap_y, p0.ap_x - p1.ap_x);
+      let cosAC = cos(angCol);
+      let sinAC = sin(angCol);
       
-      // rotatar velocidades (entrada)
-      this.v0xR = p0.vel_x * this.cosAC + p0.vel_y * this.sinAC;
-      this.v0yR = p0.vel_y * this.cosAC - p0.vel_x * this.sinAC;
-      this.v1xR = p1.vel_x * this.cosAC + p1.vel_y * this.sinAC;
-      this.v1yR = p1.vel_y * this.cosAC - p1.vel_x * this.sinAC;
+      // rotation of velocities (initial)
+      let v0xR = p0.vel_x * cosAC + p0.vel_y * sinAC;
+      let v0yR = p0.vel_y * cosAC - p0.vel_x * sinAC;
+      let v1xR = p1.vel_x * cosAC + p1.vel_y * sinAC;
+      let v1yR = p1.vel_y * cosAC - p1.vel_x * sinAC;
       
-      // intercambio de velocidades en x
-      this.v0xRaux = (this.v0xR + 2 * this.v1xR) / 2; // auxiliar para v0
-      this.v1xR = (this.v1xR + 2 * this.v0xR) / 2; // calculo de v1 usando v0 original
-      this.v0xR = this.v0xRaux; // actualizar v0
+      // interchange of velocities in x
+      let v0xRaux = (v0xR + 2 * v1xR) / 2; // auxiliar for v0
+      v1xR = (v1xR + 2 * v0xR) / 2;
+      v0xR = v0xRaux;
       
-      // solucion error de sobreposicionamieto
-      // *primero: establecer distancia entre p0 y p1 (con p0 como origen)
-      //  rotando de acuerdo a angulo de colision
-      this.dr0_x = 0;
-      this.dr0_y = 0;
-      this.dr1_x = (p0.pos_x - p1.pos_x) * this.cosAC + (p0.pos_y - p1.pos_y) * this.sinAC;
-      this.dr1_y = (p0.pos_y - p1.pos_y) * this.cosAC - (p0.pos_x - p1.pos_x) * this.sinAC;        
-      // *segundo: calcular velocidad total intercambiada
-      this.sumaVel_x = abs(this.v0xR) + abs(this.v1xR);
-      // *tercero: calcular error total de sobreposicionamiento
-      this.exceso = 2 * dm.dBall - abs(this.dr1_x);
-      // *cuarto: actualizar distancia x sumando velocidad corregida de acuerdo
-      //  a division por (en proporcion de) inetercambio total y error total
-      this.dr0_x += this.v0xR / this.sumaVel_x * this.exceso;
-      this.dr1_x += this.v1xR / this.sumaVel_x * this.exceso;
+      /*
+      // overlapping error
+      //(*)first: distance between p0 and p1 (with p0 as origin)
+      //   rotating according to angle of collision
+      let dr0_x = 0;
+      let dr0_y = 0;
+      let dr1_x = (p0.pos_x - p1.pos_x) * cosAC + (p0.pos_y - p1.pos_y) * sinAC;
+      let dr1_y = (p0.pos_y - p1.pos_y) * cosAC - (p0.pos_x - p1.pos_x) * sinAC;        
+      //(*)second: total velocity interchanged
+      let totalVel_x = abs(v0xR) + abs(v1xR);
+      //(*)third: overlap error
+      let excess = 2 * dm.dBall - abs(dr1_x);
+      //(*)fourth: update distance in x adding velocity fixed according to
+      //   division by (in proportion of) total of interchange and error
+      dr0_x += v0xR / totalVel_x * excess;
+      dr1_x += v1xR / totalVel_x * excess;
+      */
 
-      // revertir rotacion de entrada (resultados definitivos pre y post error)
-      p0.vel_x = this.v0xR * this.cosAC - this.v0yR * this.sinAC;
-      p0.vel_y = this.v0yR * this.cosAC + this.v0xR * this.sinAC;
-      p1.vel_x = this.v1xR * this.cosAC - this.v1yR * this.sinAC;
-      p1.vel_y = this.v1yR * this.cosAC + this.v1xR * this.sinAC;
-
+      // revert initial rotation (definitives results pre and post error)
+      p0.vel_x = v0xR * cosAC - v0yR * sinAC;
+      p0.vel_y = v0yR * cosAC + v0xR * sinAC;
+      p1.vel_x = v1xR * cosAC - v1yR * sinAC;
+      p1.vel_y = v1yR * cosAC + v1xR * sinAC;
     } 
 
-    // movment
+    // movment <-- final update of balls position
     p0.pos_x += p0.vel_x;
     p0.pos_y += p0.vel_y;
     p1.pos_x += p1.vel_x;

@@ -1,20 +1,21 @@
 /////////////////////////////////////////////////////////////////////////////////
 // PoolBool v0.3.5
+
 let p;
 let renderSize;
+
+//// OPC {
+
 let internalSize = 600;
-
-const c1 = [84, 91, 119];
-const c0 = [55, 66, 89];
-
 let circlesRatio = 1.2;
-let colorContrast = 80;
-
+let colorContrast = 30;
+let frBlink = 25;
+let invVelLim = 20; // top limit in map() = size / maxVel --> its inversely proportional
+let nextVelFac = 0.962; // next v = actual v * (1 - [friction as a percentage]) --> facto
 let randomTargets = true;
 
-let invVelLim = 20; // top limit in map() = size / maxVel --> its inversely proportional
-let nextVelFac = 0.962; // next v = actual v * (1 - [friction as a percentage]) --> factor
-  
+//// } OPC
+
 let dm, p1, p0, prep, evltr, table, curs;
 
 const targets = [];
@@ -50,16 +51,21 @@ function renderSetup() {
   
 }
 
+function dimensionOptions() {
+}
+
 function setup() {
 
   p = new Po();
-  dm = new Dimension(internalSize, circlesRatio, colorContrast, invVelLim);
+
+  dimensionOptions();
+  dm = new Dimension(internalSize, circlesRatio, colorContrast, invVelLim, frBlink);
   
   createCanvas(dm.size, dm.size);
   renderSetup();
   
   noCursor();
-  colorMode(RGB, 255);
+  colorMode(RGB, 100);
 
   p1 = new Player(true);
   p0 = new Player(false);
@@ -167,13 +173,13 @@ function windowResized() {
   
 function test() {
   push();
-  background(92, 137, 132);
+  background(!turn ? dm.dark : dm.light);
   for (let i = 0; i < 4; i++) {
-    targets[i].display(targets[i].x, targets[i].y);
+    targets[i].display();
     // p.p(targets[i].x, targets[i].y);
   }
-  p1.display(c1);
-  p0.display(c0);
+  p1.display();
+  p0.display();
   if (motion == 1) prep.display(turn);
   pop();
   p.p("FINAL:sketch.test", "  nav: ", nav, "  motion: ", motion);

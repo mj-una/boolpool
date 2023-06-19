@@ -1,11 +1,12 @@
 class Dimension {
   
-  constructor(size, ratio, value, limit) {
+  constructor(size, ratio, value, limit, blink) {
     this.size = size;
     
     this.dark = value;
-    this.light = 255 - value;
-    this.tran = 128;
+    this.light = 100 - value;
+
+    this.velBlink = blink;
     
     this.origin1 = this.size * 3 / 4;
     this.origin0 = this.size / 2;
@@ -46,4 +47,16 @@ class Dimension {
     this.tw = valA + sin(tempo) * (valA - valB) * this.tr;
     return this.tw;
   }  
+
+  tr_min() {
+    let tran_to_min = 60 - 60 * ((sin(frameCount / this.velBlink) + 1) / 2);
+    return tran_to_min;
+  }  
+  
+  tr_max() {
+    let tran_to_max = 40 + 60 * ((sin(frameCount / this.velBlink) + 1) / 2);
+    return tran_to_max;
+  }
+
+
 }

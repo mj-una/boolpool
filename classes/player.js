@@ -49,9 +49,9 @@ class Player {
   }
   
 
-  display(r, g, b) {
+  display() {
     noStroke();
-    fill(r, g, b);
+    fill(turn ? dm.dark : dm.light);
     circle(this.pos_x, this.pos_y, dm.dBall)
   }
 }
