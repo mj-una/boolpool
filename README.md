@@ -69,3 +69,10 @@ Me gusta el formato incompleto, me gusta que funcione sin un servidor. Se podrí
 Sigo con la última ficción (por mí no pararía, pero se está haciendo muy largo). La conversación será la primera motivación, está claro eso. Pero también podría aparecer la competencia. La dificultad del cálculo hace de la estrategia un espacio especialmente interesante para algoritmos de aprendizaje automático. Podría ser un juego para máquinas. Que el juego sea el reglamento común. Luego cada máquina hace lo que quiera en su proceso interno y arroja un resultado. Se establece un plazo máximo de tiempo para responder y cada movimiento se valida para asegurarse que esté dentro de lo reglamentario (esto podría hacerlo un servicio externo, una tercera máquina o una comunidad organizada). Los resultados se podrían copiar fácilmente, se podría estudiar cada decisión, porque es un juego entendible, corto y de poca complejidad visual. Serían razonamientos profundos y accesibles desde la jugabilidad. Una estrategia útil para cierto caso de parámetros puede ser inútil para otro caso según cálculos extremadamente densos, y aún así, la representación visual siempre se podrá replicar y entender en base a la propia experiencia: el por qué un tiro era mejor que otro, o por qué una máquina tiende a actuar de determinada forma según determinados límites. Por ejemplo, podrían existir distintas categorías de competencias, de algoritmos o de intereses: para juegos más rápidos o más lentos, más intensos o más livianos (aumentando la precisión de un decimal o la resolución interna), con mayor o menor variabilidad, que se incentive la creatividad, o la potencia, o el bajo consumo, etc, etc…
 
 Si funcionara, si realmente abriera una posibilidad de intercambio entre el cálculo profundo y la experiencia corporal, ¿qué posición ocuparían las máquinas? ¿qué significaría el trabajo? Me da una mezcla entre ilusión y pánico, porque en parte es la ciencia ficción del presente y porque en parte es un futuro que ya existe. Ya somos máquinas, ya trabajamos en algo parecido; y nada es mejor, nada está cambiando. No hay afuera, el mundo es un zapallo.
+
+<br>
+
+<br>
+
+<br>
+
