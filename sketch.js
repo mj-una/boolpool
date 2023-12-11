@@ -95,6 +95,7 @@ let victoria0, victoria1; // estado victoria
 
 let voz, fin;
 let inicial = true;
+let cambio = true;
 
 
                            /*_ _ _ _ ""><"" _ _ _ _*/
@@ -886,9 +887,10 @@ function draw() {
 
   // CAMBIO AUDIO
 
-  if (voz.currentTime() >= voz.duration()) {
+  if (cambio && voz.currentTime() >= voz.duration()) {
     voz.pause();
     fin.loop();
+    cambio = false;
   }
 }
 
