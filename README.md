@@ -56,7 +56,9 @@ Lo que describí lo puedo hacer asi que lo incluiré en la próxima versión. Po
 
 <br>
 
-<a href="#" id="objetivo"></a><b>Objetivo</b>
+#### Objetivo
+
+<br>
 
 ...Toda esta explicación era para obtener lo siguiente: el juego se ejecutará por separado en los navegadores de cada persona. Las reglas, los parámetros y todos los cálculos que se hagan serán exactamente los mismos, pero se obtienen en paralelo. Las personas interactúan mediante cualquier otra plataforma (por una llamada, por un live, por un chat, por comentarios en una publicación, etc). De esta forma se indican mutuamente el estado en que se encuentra su programa. Es decir, una persona hace un tiro y le informa a la otra las coordenadas (tipo “1B - 3D”) para que simule el tiro en su propio juego y prepare su próxima jugada en respuesta al nuevo estado de la situación. Se genera un intercambio similar al juego de mesa “Batalla Naval” en que hay que informar la posición de cada disparo con un número y una letra. Se hace necesario dialogar. Y no se puede hacer trampa porque se desfasaría la simulación de la otra persona y en algún momento se llegará a resultados diferentes.
 
