@@ -142,9 +142,9 @@ Palabras modificadas para el lector de pantalla:
 
 <br>
 
-La resignificación del sistema de turnos y del software por construir son influencia del texto "Usuaria Turing Completa" (2012) de Olia Lialina. Disponible en: <a href="https://endefensadelsl.org/usuaria_turing_completa.pdf" target="_blank" rel="noopener">https://endefensadelsl.org/usuaria_turing_completa.pdf</a>
+La resignificación del software fragmentado es influencia directa del texto "Usuaria Turing Completa" (2012) de Olia Lialina. Disponible en: <a href="https://endefensadelsl.org/usuaria_turing_completa.pdf" target="_blank" rel="noopener">https://endefensadelsl.org/usuaria_turing_completa.pdf</a>
 
-Para las colisiones entre las personas utilicé un algoritmo publicado por Keith Peters en "Foundation HTML5 Animation with JavaScript" (2011), explicado por Long Nguyen en este video: <a href="https://youtu.be/guWIF87CmBg?si=iG-x1BCl9WxKKIxk" target="_blank" rel="noopener">https://youtu.be/guWIF87CmBg?si=iG-x1BCl9WxKKIxk</a>
+Para las colisiones entre las personas usé un algoritmo publicado por Keith Peters en "Foundation HTML5 Animation with JavaScript" (2011), explicado por Long Nguyen en este video: <a href="https://youtu.be/guWIF87CmBg?si=iG-x1BCl9WxKKIxk" target="_blank" rel="noopener">https://youtu.be/guWIF87CmBg?si=iG-x1BCl9WxKKIxk</a>
 
 <br>
 
