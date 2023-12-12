@@ -143,10 +143,10 @@ function preload() {
   arialBold_d12 = loadFont("fonts/arialbd.ttf");
   arial_d15 = loadFont("fonts/arial.ttf");
 
-  voz = loadSound("audio/audio.mp3");
+  voz = loadSound("audio/narracion.mp3");
   voz.pause();
   
-  fin = loadSound("audio/loop.mp3");
+  fin = loadSound("audio/cierre.mp3");
   fin.pause();
 }
 
