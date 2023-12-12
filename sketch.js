@@ -34,8 +34,14 @@
 /*
 
   PRESENTACION
+
+  Código inicial, usando conocimientos mínimmos. Posteriormente hice un intento
+  de implementación con programación orientada a objetos (BoolPool v0.35)
+
+  Haré otra versiónes, más legible, eficiente y con nuevas funcionalidades.
+  Aquí describo la idea: https://github.com/mj-una/ia1-tp2-BoolPool/tree/main
   
-  Inspirado por texto de Olia Lialina "Usuaria Turing Completa" (2012) 
+  Inspirado por texto "Usuaria Turing Completa" (2012) de Olia Lialina.
   https://endefensadelsl.org/usuaria_turing_completa.pdf
 
   FISICA
@@ -47,14 +53,19 @@
 
   Como se detalla ahí, el algoritmo permite simplificar las dos dimensiones
   mediante una rotacion en la que se establece como eje x a la linea que une
-  los centros de las dos particulas en colision. Las velocidades en y se
-  mantienen constantes ya que inciden perpendicularmente y no afectan ni es
-  afectadaas por las otras fuerzas. Las velocidades en x se resuleven como una
-  colision de una sola dimmension. En este caso las masas de las bolas es la
-  misma y no cambia por lo que el calculo se reduce a intercambiar las
-  velocidades de una particula a la otra. Luego se revierte la rotacion y se
-  calculan las velocidades definitivas para x e y. 
-      
+  los centros de las dos particulas en colision. Las velocidades en y dejarán
+  de afectar ya que inciden perpendicularmente (sin interactuar con la otra
+  particula). Asi, las velocidades en x se resuleven como una colision de una
+  sola dimmension. En este caso las masas de las partículas es la misma y no
+  cambia por lo que el calculo se reduce a intercambiar las velocidades en x
+  de una particula a la otra. Luego se revierte la rotacion y se calculan las
+  velocidades definitivas para x e y.
+
+  Se podría implementar algo similar para un sistema de múltiples partículas.
+  Todo se explica en el video. El código que se muestra se puede encontrar acá:
+  https://github.com/LongBaoNguyen/longbaonguyen.github.io/tree/master/courses
+  /codingchallenges
+  
  */
 
 
@@ -64,7 +75,6 @@
 
 let arialBold_d12; // width = 600 --> textSize = 50
 let arial_d15; // width = 600 --> textSize = 40
-let fondoMenu; // --> guardarFondo()
 
 let pantalla; // [0]Juego, [1]Intro , [2]Menu, [3]Instrucciones, [4]Victoria
 
