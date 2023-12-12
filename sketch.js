@@ -42,14 +42,14 @@
   Aquí describo la idea: https://github.com/mj-una/ia1-tp2-BoolPool/tree/main
   
   Inspirado por texto "Usuaria Turing Completa" (2012) de Olia Lialina.
-  https://endefensadelsl.org/usuaria_turing_completa.pdf
+  Disponible en: https://endefensadelsl.org/usuaria_turing_completa.pdf
 
   FISICA
   
   Para resolver las colisiones de las bolas en dos dimensiones utilicé un 
-  algoritmo publicado por Keith Peters en "Foundation HTML5 Animation with
-  JavaScript" (2011), explicado por Long Nguyen en este video de su canal
-  de youtube: https://youtu.be/guWIF87CmBg
+  algoritmo publicado en "Foundation HTML5 Animation with JavaScript" (2011)
+  por Keith Peters, siguiendo la explicación de Long Nguyen disponible en
+  este video: https://youtu.be/guWIF87CmBg
 
   Como se detalla ahí, el algoritmo permite simplificar las dos dimensiones
   mediante una rotacion en la que se establece como eje x a la linea que une
