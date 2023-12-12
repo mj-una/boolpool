@@ -22,55 +22,125 @@ Martin Julio
 
 <br>
 
-### Narración
+### <span id="narracion">Narración</span>
 
 <br>
 
-Este juego es una excusa. Hice un examen sobre un trabajo que me gustó mucho y aproveché para meterle otro poco de creatividad al asunto. Necesito darle espacio a mi imaginación, asi que diré en palabras lo que no alcanzo a hacer en código. Me gustan las palabras cuando son para invitar a imaginar cosas. El juego está incompleto, pero se puede jugar igual. Aprovecho esta excusa para hablar de lo que me gustaría hacer, mezclando ciencia ficción, código, fantasía, tareas pendientes, promesas dudables y reciclajes de último minuto. Para que vayamos aprendiendo a jugarlo por si algún día queremos aburrirnos en compañía y no tenemos otra excusa mejor que ésta.
+Este juego es una excusa. Hice un examen sobre un trabajo que me gustó mucho y aproveché para metér otro poco de creatividad en el asunto. Necesito darle espacio a mi imaginación, asi que diré en palabras lo que no alcanzo a hacer en código. Me gustan las palabras cuando son para invitar a imaginar cosas. El juego está incompleto, pero se puede jugar igual. Aprovecho esta excusa para hablar de lo que me gustaría hacer, mezclando ciencia ficción, código, fantasías, tareas pendientes, promesas dudables y reciclajes de último minuto. Para que vayamos aprendiendo a jugarlo por si algún día queremos aburrirnos en compañía y no tenemos otra excusa mejor que ésta.
 
-El juego se llama "BoolPool". Es muy simple, se aprende rápido, se juega por instinto, sin pensarlo mucho. Es de estrategia, porque no hay azar, pero no sirve memorizarlo. Es para aprender a prueba y error, para sorprender con una jugada inesperada, para prestar atención al diálogo, para cambiar de planes, para inventar sobre la marcha.
+El juego se llama Bul-Pul. Es muy simple, se aprende rápido, se juega por instinto, sin pensarlo mucho. Es de estrategia, porque no hay azar, pero no sirve memorizarlo. Es para aprender a prueba y errór, para sorprender con una jugada inesperada, para prestar atención al diálogo, para cambiar de planes, para inventar sobre la marcha.
 
-Hay dos personas, P0 y P1. En dos de las cuatro esquinas hay un objetivo que parpadea. Cada vez que una persona toca un objetivo durante su turno, suma un punto. Cada vez que una persona toca un objetivo (sea su turno o no), el objetivo desaparece. Al final del turno se colocan nuevamente los objetivos. En algunos casos será la propia persona quién decida dónde colocar el objetivo, en otros casos se colocará automáticamente siguiendo el reglamento: es requisito que las esquinas no estén ocupadas y se prioriza que no hayan tenido un objetivo antes del turno. Gana quién haga cuatro puntos en total, o quién haga dos puntos consecutivos en un mismo turno. Cada victoria es una ronda. Se puede jugar al mejor de cierta cantidad de rondas.
+<br>
+
+#### <span id="descripcion">Descripción</span>
+
+<br>
+
+Hay dos personas, P0 y P1. En dos de las cuatro esquinas hay un objetivo que parpadea. Cada vez que una persona toca un objetivo durante su turno, suma un punto. Cada vez que una persona toca un objetivo (sea su turno o no), el objetivo desaparece. Al final del turno se colocan nuevamente los objetivos. En algunos casos será la propia persona quién decida dónde colocar el objetivo, en otros casos se colocará automáticamente siguiendo el reglamento: (primero.) es requisito que las esquinas no estén obstruídas por una persona; (segundo.) se priorizan las esquinas que no hayan tenido un objetivo previamente; (tercero.) si finalmente queda más de una opción, entonces la persona decide. Victoria: gana quién haga cuatro puntos en total, o quién haga dos puntos consecutivos en un mismo turno. Cada victoria es una ronda. Se puede jugar al mejor de cierta cantidad de rondas.
+
+Abre paréntesis. Aquí apareció la primera fantasía: no hice lo de elegir la esquina en la que colocar el objetivo. O sea lo hice pero no me resultó, entonces hice un random que no funciona muy bien. Hoy se me ocurren mil formas correctas de resolverlo, asi que la próxima versión ya tendrá esa funcionalidad incorporada. Cierra paréntesis.
+
+Las dos opciones de victoria hacen que el juego sea dinámico. Un movimiento ambicioso puede volverse una derrota segura. Pero no arriesgar y dejar a la otra persona ganar un punto en cada turno significa que también perderás pronto (en cuatro turnos máximo). Hay que buscar un equilibrio entre ataque y defensa, no se puede estar quieto.
+
+Los objetivos desaparecen como las manzanitas del “Snéik”. Las personas se desplazan y colisionan como bolas de pool. Cada tiro se prepara de manera similar a los juegos de pool para celulares; de la siguiente forma:
+
+(1.) Al presionar sobre la pantalla se guarda el punto en que se inicia el movimiento, y se activa una vista que representa los componentes del vector del tiro, estos son: magnitud, representada por el diámetro del círculo móvil, y dirección, representada por el segmento que une punto de inicio y posición actual. Además se establece un círculo fijo que marca el límite de la magnitud máxima posible.
+
+(2.) Al arrastrarse el click mantenido cambiará el diámetro del círculo móvil (según la distancia respecto al punto de origen) y cambiará el segmento (según la posición del desplazamiento). Si el movimiento excede la magnitud máxima, entonces el círculo móvil se equipára al círculo fijo. Si el movimiento es menor a la magnitud mínima el círculo móvil y el segmento se vuelven grisáceos.
+
+(3.) El tiro se ejecuta al liberar el click mantenido, solo si se lo hace con una magnitud mayor a la mínima (para evitar clicks accidentales o para arrepentirse). La persona se moverá de forma proporcional a la magnitud y la dirección del vector trazado.
+
+<br>
+
+#### <span id="mensajes">Mensajes “1B-3D”</span>
+
+<br>
+
+Ahora aparece otra fantasía, esta vez un poco más compleja, pero aún dentro de lo realizable. Las magnitudes se representan como porcentajes (en números enteros del 1 al 100) y las direcciones como grados (en números enteros del 1 al 360). Los números del 1 al 100 se pueden abarcar completamente con dos dígitos. Los números del 1 al 360 se pueden abarcar completamente en la combinatoria de dos letras. Con un alfabeto de 19 letras (especialmente seleccionadas para evitar confusiones fonéticas como “ve larga” y “ve corta”) habrían 361 formas posibles de relacionar dos letras, lo que se puede usar para representar ordenadamente los 360 grados necesarios. Así cada tiro se puede comunicar mediante dos pares ordenados de dígito y letra. Por ejemplo: “1B-3D”. Donde la magnitud sería 13% (por el 1 y el 3) y la dirección sería 23 grados, debido a la suma de 19 y 4. Abre paréntesis. Este resultado es porque B en primera posición significa que se abarcaron los 19 casos posibles con A en primera posición, y luego se suman los 4 casos posibles recorriendo la segunda posición desde la A que equivale a 1 hasta la D que equivale a 4. Cierra paréntesis. Además, para las situaciones en que una persona tuvo que decidir sobre colocar un objetivo en una nueva posición, sería solamente entre dos opciones: naturál o forzado. Esta información se puede representar mediante el orden en que se dispone cada par. Por ejemplo para casos naturales sería: “1B-3D”. Y para casos forzados sería: “B1-D3”; (invirtiendo la letra por el número).
+
+Naturál y forzado son solamente dos opciones porque todo los casos en que se puede decidir una relocalización son reducibles a: (caso 1.) solo desaparece un objetivo y las dos esquinas vacías están sin obstruír, por lo que habrán dos posiciones posibles para elegir; o (caso 2.) desaparecen los dos objetivos pero una de las personas está sobre una de las esquinas vacías, por lo que el primer objetivo ocupará la otra esquina vacía y para el segundo habrá que elegir entre una de las dos esquinas que se encontraban ocupadas previamente. En ambos casos existe una posición predicha para ser ocupada. Se toma esa posición predicha como referencia para determinar si la relocalización se hace en la esquina siguiente en sentido horario, llamada naturál, o en la subsiguiente, llamada forzada (que se salta a la posición naturál). En cualquier otro caso no se llegará a hacer una elección, porque con las dos primeras reglas bastarán para asignar automáticamente las posiciones. Las reglas eran éstas: (primero.) es requisito que las esquinas no estén obstruídas por una persona; (segundo.) se priorizan las esquinas que no hayan estado ocupadas previamente; (tercero.) si finalmente queda más de una opción, entonces la persona decide. Por ejemplo, si se diera el caso en que desaparecieran los dos objetivos, y las dos esquinas vacías se encuentran obstruídas, entonces los objetivos volverán a aparecer en las mismas esquinas que se encontraban. De forma similar se pueden deducir todos los demás casos. Aclaración: Los nombres naturál y forzado y la lógica de cómo se traduce la información no son para que las personas lo tengan en cuenta, sino para entender el funcionamiento interno del código fuente.
+
+Con todo esto en mente, se tiene que cada mensaje transmite información precisa sobre magnitud en porcentaje, sobre dirección en grados y, si sucede, sobre relocalización forzada del objetivo. Se pueden hacer hasta algo menos de 72.200 tiros distintos diferentes por cada jugada; y, con un mensaje fácil de oír y decir, se puede codificar y decodificar toda la información necesaria para que una persona le comunique a otra específicamente qué tiro hizo.
+
+Lo que describí lo puedo hacer, y lo incluiré en la próxima versión. Por ahora lo resolveré con condicionales y bucles, pero me gustaría aprender sobre expresiones regulares para que sea un código más eficiente.
+
+<br>
+
+#### <span id="finalidad">Finalidad</span>
+
+<br>
+
+Toda esta explicación es para llegar a lo siguiente: el juego se ejecutará por separado en los navegadores de cada persona. Las reglas, los parámetros y todos los cálculos que se hagan serán exactamente los mismos, pero se obtienen en paralelo. Las personas interactúan mediante cualquier otra plataforma (por una llamada, por un láiv, por un chat, por comentarios en una publicación, etc). De esta forma se indican mutuamente el estado en que se encuentra su programa. Es decir, una persona hace un tiro y le informa a la otra las coordenadas (tipo “1B-3D”) para que simule el tiro en su propio juego y pre-pare su próxima jugada en respuesta al nuevo estado de la situación. Se genera un intercambio similar al juego de mesa “Batalla Naval” en que hay que informar la posición de cada disparo con un número y una letra. Se hace necesario dialogar. Y no se puede hacer trampa porque se desfasaría la simulación de la otra persona y en algún momento se llegará a resultados diferentes.
+
+Ahora abro paso a la fantasía especulativa. El objetivo final no será ganar, sino simplemente tener una excusa para mantener una conversación durante mucho rato. La estrategia es volátil por dos motivos: (1.) hay muchísimas posibilidades por cada tiro que se realiza, y (2.) se podría implementar una funcionalidad previa al inicio de cada ronda en que se modifiquen levemente los valores de distintos parámetros, lo que afectará la posición final de cada movimiento (por ejemplo modificar el roce o la velocidad máxima). Así se vuelve imposible de calcular con exactitud una estrategia definitiva. Así se evita que se transforme en un juego de pensamiento. Así cada juego es una conversación que fluye, unas rondas para ir probando, unas rondas por entretención, unas rondas más en serio y por último unas rondas finales en que se te vaya la vida por ganar. No solo es una excusa que puede ser liviana y que consume pocas palabras, sino que además marca un ritmo, marca etapas de concentración, marca una conversación que fluye y se vuelve tensa, que mantiene un punto de atención compartida, un lugar de encuentro.
+
+<br>
+
+#### <span id="aplicacion">Aplicación</span>
+
+<br>
+
+Me gusta el formato incompleto, me gusta que funcione sin un servidor. Se podría subir en Guit-jab Peiches. Me imagino lo simple que sería que cada persona clone el repositorio y levante su propia página. O más fácil, se podría distribuir como un html que contenga todo el script y estilos incrustados, que se pueda enviar como un solo archivo adjunto, un ejecutable listo para abrir en el navegador. Me gusta que no funcione como una app o un videojuego normal. Me gusta que sea necesario conversar de algún modo, que las personas le den la funcionalidad que le falta, que construyan la parte que a mí no me interesa crear. Así, incompleto, sin terminar, el objetivo final es mucho más amplio de lo que cualquier código permitiría por sí solo.
+
+Sigo con la última ficción (por mí no pararía, pero se está haciendo muy largo). La conversación es una motivación general, está claro eso. Pero también podría aparecer la competencia. La dificultad del cálculo hace que la estrategia sea un problema especialmente interesante para algoritmos de aprendizaje automático. Podría ser un juego para máquinas. Que el juego sea el reglamento común. Luego cada máquina hace lo que quiera en su proceso interno y arroja un resultado. Se establece un plazo máximo de tiempo para responder y cada movimiento se valida para asegurarse que esté dentro de lo reglamentario (esto podría hacerlo un servicio externo, una tercera máquina o una comunidad organizada). Los resultados se podrían copiar fácilmente, se podría estudiar cada decisión, porque es un juego entendible, corto y de poca complejidad visuál. Serían razonamientos profundos y accesibles desde la jugabilidad. Una estrategia útil para cierto caso de parámetros puede ser inútil para otro caso según cálculos extremadamente densos, y aún así, la representación visuál siempre se podría replicar y entender en base a la propia experiencia: el por qué un tiro era mejor que otro, o por qué una máquina tiende a actuar de determinada forma según determinados límites. Por ejemplo, podrían existir distintas categorías de competencias, de algoritmos o de intereses: para juegos más rápidos o más lentos, más intensos o más livianos (cambiando la resolución interna o la precisión de un decimal), para juegos con mayor o menor variabilidad en que se busque potenciar la creatividad, o para explorar la profundidad, o para optimizar la eficiencia energética, etc, etc, etc.
+
+<br>
+
+#### <span id="cierre">Cierre</span>
+
+<br>
+
+Si funcionara, si realmente abriera una posibilidad de intercambio entre el cálculo complejo y la experiencia corporal, ¿qué posición ocuparían las máquinas? ¿qué significaría el trabajo? Siento una mezcla entre ilusión y pánico, porque nada de lo que dije es ciencia ficción; porque es el presente; porque es un futuro que ya existe. Ya somos máquinas, ya trabajamos de la forma descrita; y nada es distinto, nada está mejorando. No hay afuera, el mundo es un zapallo.
+
+<br>
+
+***
+
+<br>
+
+### <span id="traduccion">Traducción</span>
+
+<br>
+
+Palabras modificadas para el lector de pantalla:
+
+<ul>
  
-Abre paréntesis. Aquí apareció la primera fantasía: no hice lo de elegir la esquina en la que colocar el objetivo. O sea lo hice pero no me resultó, entonces hice un random que no funciona muy bien. Hoy se me ocurren mil formas de resolverlo, asi que la próxima versión ya tendrá esa función incorporada. Cierra paréntesis.
+<li>metér  →  meter
 
-Las dos opciones de victoria hacen que el juego sea dinámico. Un movimiento ambicioso puede volverse una derrota segura. Pero no arriesgar y dejar a la otra persona ganar un punto en cada turno significa que también perderás pronto (en 4 turnos máximo). Hay que buscar un equilibrio entre ataque y defensa, no se puede estar quieto. 
+<li>errór  →  error
 
-Los objetivos desaparecen como las manzanitas del "Snake". Las personas se desplazan y colisionan como bolas de pool. Cada tiro se prepara de manera similar a los juegos de pool para celulares, de esta forma:
+<li>Bul-Pul  →  BoolPool
 
-<ol>
-<li>Al presionar sobre la pantalla se guarda el punto en que se inicia el movimiento, y se activa una vista que representa los componentes del vector del tiro, estos son: magnitud, representada por diámetro del círculo móvil, y dirección, representada por el segmento que une punto de inicio y posición actual. Además se establece un círculo fijo que marca el límite de la magnitud máxima posible. 
+<li>Snéik  →  Snake
 
-<li>Al arrastrarse el click mantenido cambiará el diámetro del círculo móvil (según la distancia respecto al punto de origen) y el segmento (según posición del desplazamiento). Si el movimiento excede la magnitud máxima, entonces el círculo móvil se equipara al círculo fijo. Si el movimiento es menor a la magnitud mínima el círculo móvil y el segmento se vuelven grisáceos.
+<li>equipára  →  equipara
 
-<li>El tiro se ejecuta al liberar el touch o click mantenido, solo si se lo hace con una magnitud mayor a la mínima (para evitar clicks accidentales o para arrepentirse). La persona se moverá de forma correspondiente a la velocidad y dirección del vector trazado. 
-</ol>
+<li>naturál  →  natural
 
-Ahora aparece otra fantasía, esta vez un poco más compleja, pero aún dentro de lo realizable. Las magnitudes se representan como porcentajes (en números enteros del 1 al 100) y las direcciones como grados (en números enteros del 1 al 360). Los números del 1 al 100 se pueden abarcar completamente con dos dígitos. Los números del 1 al 360 se pueden abarcar completamente en la combinatoria de dos letras. Con un alfabeto de 19 letras (especialmente seleccionadas para evitar confusiones fonéticas como “ve larga” y “ve corta”) habrían 361 formas posibles de relacionar dos letras, lo que se puede usar para representar ordenadamente los 360 grados necesarios. Así cada tiro se puede comunicar con dos pares ordenados de dígito y letra. Por ejemplo: “1B - 3D”. Donde la magnitud sería 13% (por el 1 y el 3) y la dirección sería 23 grados, debido a la suma de 19 y 4. Abre paréntesis. Este resultado es porque B significa que se abarcaron los 19 casos posibles con A en primera posición, más los 4 casos posibles con B en primera posición, recorriendo la segunda posición desde la A que equivale a 1 hasta la D que equivale a 4. Cierra paréntesis. Además, si se da el caso de que la persona tuvo que decidir sobre colocar un objetivo en una nueva posición, serían solamente entre dos opciones: natural o forzada. Esta información se puede representar mediante el orden en que se dispone cada par. Por ejemplo para casos naturales sería: “1B - 3D”. Y para casos forzados sería: “B1 - D3”. 
+<li>láiv  →  live
 
-Son dos opciones porque solamente se puede decidir una relocalización en estos casos: 1. solo desaparece un objetivo y las otras dos esquinas están disponibles, por lo que hay dos posiciones posibles para elegir; o 2. desaparecen dos objetivos pero una de las otras esquinas está ocupada por una persona por lo que un objetivo ocupará la esquina disponible y para el otro se debe elegir entre una de las esquinas en que se encontraban los objetivos previamente. En ambos casos existe una posición que ya está asignada y será tomada como referencia para determinar si la relocalización se hace en la esquina siguiente en sentido horario, llamada natural, o en la subsiguiente, saltando la posición natural, llamada forzada. Para todos los demás casos se asignarán las relocalizaciones sin posibilidad de elección, siguiendo automáticamente las reglas de que: es requisito que no estén ocupadas las esquinas por personas y se intenta que no se repitan esquinas utilizadas previamente. La lógica y los nombres natural y forzado no son para que los manejen las personas, sino para entender el funcionamiento interno del código fuente.
+<li>pre-pare  →  prepare
 
-Con todo esto en mente, se tiene que cada mensaje contiene la información precisa sobre magnitud, dirección y, si es necesario, relocalización forzada del objetivo. Se pueden hacer hasta algo menos de 72.200 tiros distintos en cada jugada, y con un mensaje fácil de oír y decir se puede codificar y decodificar toda la información necesaria para comunicar cada caso posible.
+<li>Guit-jab  →  Github
 
-Lo que describí lo puedo hacer asi que lo incluiré en la próxima versión. Por ahora lo resolveré con condicionales y bucles, pero me gustaría aprender sobre expresiones regulares para que sea un código más eficiente.
+<li>Peiches  →  Pages
 
-<br>
+<li>visuál  →  visual
 
-#### Objetivo
+</ul>
 
 <br>
 
-...Toda esta explicación era para obtener lo siguiente: el juego se ejecutará por separado en los navegadores de cada persona. Las reglas, los parámetros y todos los cálculos que se hagan serán exactamente los mismos, pero se obtienen en paralelo. Las personas interactúan mediante cualquier otra plataforma (por una llamada, por un live, por un chat, por comentarios en una publicación, etc). De esta forma se indican mutuamente el estado en que se encuentra su programa. Es decir, una persona hace un tiro y le informa a la otra las coordenadas (tipo “1B - 3D”) para que simule el tiro en su propio juego y prepare su próxima jugada en respuesta al nuevo estado de la situación. Se genera un intercambio similar al juego de mesa “Batalla Naval” en que hay que informar la posición de cada disparo con un número y una letra. Se hace necesario dialogar. Y no se puede hacer trampa porque se desfasaría la simulación de la otra persona y en algún momento se llegará a resultados diferentes.
-
-Ahora paso a la fantasía especulativa. El objetivo final no será ganar, sino simplemente tener una excusa para mantener una conversación durante mucho rato. La estrategia es volátil por dos motivos: 1. hay muchísimas posibilidades por cada tiro que se realiza y 2. se podría implementar una funcionalidad previa al inicio de cada ronda en que se modifiquen levemente los valores de distintos parámetros, lo que afectará la posición final de cada movimiento (por ejemplo modificar el roce, o la velocidad de la magnitud máxima, o la resolución interna, etc). Así se vuelve imposible de calcular una estrategia en tiempo real. Así se evita que se transforme en un juego de pensamiento. Así cada juego es una conversación que fluye, unas rondas para ir probando, unas rondas por entretención, unas rondas más en serio y por último unas rondas finales en que se te vaya la vida por ganar. No solo es una excusa que puede ser liviana y que consume pocas palabras, sino que además marca un ritmo, marca etapas de concentración, marca una conversación que fluye y se vuelve tensa, que mantiene un punto de atención compartido, un encuentro.
-
-Me gusta el formato incompleto, me gusta que funcione sin un servidor. Se podría subir en Github Pages. Me imagino lo simple que sería que cada persona clone el repositorio y levante su propia página. O más fácil, se podría distribuir como un html que contenga todo el script y estilos incrustados, que se pueda enviar como archivo adjunto, un ejecutable listo para abrir en el navegador. Me gusta que no funcione como una app o un videojuego normal. Me gusta que sea necesario conversar de algún modo, que las personas le den la funcionalidad que le falta, que construyan la parte que a mí no me interesa crear. Así, incompleto, sin terminar, el objetivo final es mucho más amplio de lo que cualquier código permitiría por sí solo.
-
-Sigo con la última ficción (por mí no pararía, pero se está haciendo muy largo). La conversación será la primera motivación, está claro eso. Pero también podría aparecer la competencia. La dificultad del cálculo hace de la estrategia un espacio especialmente interesante para algoritmos de aprendizaje automático. Podría ser un juego para máquinas. Que el juego sea el reglamento común. Luego cada máquina hace lo que quiera en su proceso interno y arroja un resultado. Se establece un plazo máximo de tiempo para responder y cada movimiento se valida para asegurarse que esté dentro de lo reglamentario (esto podría hacerlo un servicio externo, una tercera máquina o una comunidad organizada). Los resultados se podrían copiar fácilmente, se podría estudiar cada decisión, porque es un juego entendible, corto y de poca complejidad visual. Serían razonamientos profundos y accesibles desde la jugabilidad. Una estrategia útil para cierto caso de parámetros puede ser inútil para otro caso según cálculos extremadamente densos, y aún así, la representación visual siempre se podrá replicar y entender en base a la propia experiencia: el por qué un tiro era mejor que otro, o por qué una máquina tiende a actuar de determinada forma según determinados límites. Por ejemplo, podrían existir distintas categorías de competencias, de algoritmos o de intereses: para juegos más rápidos o más lentos, más intensos o más livianos (aumentando la precisión de un decimal o la resolución interna), con mayor o menor variabilidad, que se incentive la creatividad, o la potencia, o el bajo consumo, etc, etc…
-
-Si funcionara, si realmente abriera una posibilidad de intercambio entre el cálculo profundo y la experiencia corporal, ¿qué posición ocuparían las máquinas? ¿qué significaría el trabajo? Me da una mezcla entre ilusión y pánico, porque en parte es la ciencia ficción del presente y porque en parte es un futuro que ya existe. Ya somos máquinas, ya trabajamos en algo parecido; y nada es mejor, nada está cambiando. No hay afuera, el mundo es un zapallo.
+### <span id="fuentes">Fuentes</span>
 
 <br>
+
+La resignificación del sistema de turnos y del software por construir son influencia del texto "Usuaria Turing Completa" (2012) de Olia Lialina<br>
+<a href="https://endefensadelsl.org/usuaria_turing_completa.pdf" target="_blank" rel="noopener">https://endefensadelsl.org/usuaria_turing_completa.pdf</a>
+
+Para las colisiones entre las personas utilicé un algoritmo publicado por Keith Peters en "Foundation HTML5 Animation with JavaScript" (2011), explicado por Long Nguyen en este video:<br>
+<a href="https://youtu.be/guWIF87CmBg?si=iG-x1BCl9WxKKIxk" target="_blank" rel="noopener">https://youtu.be/guWIF87CmBg?si=iG-x1BCl9WxKKIxk</a>
 
 <br>
 
