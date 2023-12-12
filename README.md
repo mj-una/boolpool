@@ -1,6 +1,6 @@
 ## IA1 TP2 - Juego para conversar
 
-## IG1 - Examen final
+## IG - Examen final
 
 <br>
 
