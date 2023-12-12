@@ -26,7 +26,7 @@ Martin Julio
 
 <br>
 
-Este juego es una excusa. Hice un examen que me gustó mucho y lo aproveché para meterle otro poco de creatividad. Necesito darle espacio a mi imaginación, asi que diré en palabras lo que no alcanzo a hacer en código. Me gustan las palabras cuando son para invitar a imaginar cosas. El juego está incompleto, pero se puede jugar igual. Aprovecho esta excusa  para hablar de lo que me gustaría hacer, mezclando ciencia ficción, código, fantasía, tareas pendientes, promesas dudables y reciclajes de último minuto. Para que vayamos aprendiendo a jugarlo por si algún día queremos aburrirnos en compañía y no tenemos otra excusa mejor que ésta.
+Este juego es una excusa. Hice un examen sobre un trabajo que me gustó mucho y aproveché para meterle otro poco de creatividad al asunto. Necesito darle espacio a mi imaginación, asi que diré en palabras lo que no alcanzo a hacer en código. Me gustan las palabras cuando son para invitar a imaginar cosas. El juego está incompleto, pero se puede jugar igual. Aprovecho esta excusa para hablar de lo que me gustaría hacer, mezclando ciencia ficción, código, fantasía, tareas pendientes, promesas dudables y reciclajes de último minuto. Para que vayamos aprendiendo a jugarlo por si algún día queremos aburrirnos en compañía y no tenemos otra excusa mejor que ésta.
 
 El juego se llama "BoolPool". Es muy simple, se aprende rápido, se juega por instinto, sin pensarlo mucho. Es de estrategia, porque no hay azar, pero no sirve memorizarlo. Es para aprender a prueba y error, para sorprender con una jugada inesperada, para prestar atención al diálogo, para cambiar de planes, para inventar sobre la marcha.
 
