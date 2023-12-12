@@ -35,11 +35,12 @@
 
   PRESENTACION
 
-  Código inicial, usando conocimientos mínimmos. Posteriormente hice un intento
-  de implementación con programación orientada a objetos (BoolPool v0.35)
-
-  Haré otra versiónes, más legible, eficiente y con nuevas funcionalidades.
-  Aquí describo la idea: https://github.com/mj-una/ia1-tp2-BoolPool/tree/main
+  Este código es una adaptación web de BoolPool v0.32, que hice en Processing
+  con conocimientos mínimmos. Posteriormente hice un intento (BoolPool v0.35)
+  de implementación web trabajando con clases cuando aprendí sobre objetos.
+  Ya manejo muchos conceptos que antes desconocía. Haré otra versiónes, más
+  legible, eficiente y con nuevas funcionalidades. Aquí describo la idea:
+  https://github.com/mj-una/ia1-tp2-BoolPool/tree/main
   
   Inspirado por texto "Usuaria Turing Completa" (2012) de Olia Lialina.
   Disponible en: https://endefensadelsl.org/usuaria_turing_completa.pdf
