@@ -46,7 +46,7 @@ Los objetivos desaparecen como las manzanitas del “<i>Snéik</i>”. Las perso
 
 (1.) Al presionar sobre la pantalla se guarda el punto en que se inicia el movimiento, y se activa una vista que representa los componentes del vector del tiro, estos son: magnitud, representada por el diámetro del círculo móvil, y dirección, representada por el segmento que une punto de inicio y posición actual. Además se establece un círculo fijo que marca el límite de la magnitud máxima posible.
 
-(2.) Al arrastrarse el click mantenido cambiará el diámetro del círculo móvil (según la distancia respecto al punto de origen) y cambiará el segmento (según la posición del desplazamiento). Si el movimiento excede la magnitud máxima, entonces el círculo móvil se <i>equipára</i> al círculo fijo. Si el movimiento es menor a la magnitud mínima el círculo móvil y el segmento se vuelven grisáceos.
+(2.) Al arrastrarse el click mantenido cambiará el diámetro del círculo móvil (según la distancia respecto al punto de origen) y cambiará el segmento (según la posición del desplazamiento). Si el movimiento excede la magnitud máxima, entonces el círculo móvil se <i>equipára</i> al círculo fijo. Si el movimiento es menor a la magnitud mínima, entonces el círculo móvil y el segmento se vuelven grisáceos.
 
 (3.) El tiro se ejecuta al liberar el click mantenido, solo si se lo hace con una magnitud mayor a la mínima (para evitar clicks accidentales o para arrepentirse). La persona se moverá de forma proporcional a la magnitud y la dirección del vector trazado.
 
