@@ -26,7 +26,7 @@ Martin Julio
 
 <br>
 
-Este juego es una excusa. Hice un examen sobre un trabajo que me gustó mucho y aproveché para <i>metér</i> otro poco de creatividad en el asunto. Necesito darle espacio a mi imaginación, asi que diré en palabras lo que no alcanzo a hacer en código. Me gustan las palabras cuando son para invitar a imaginar cosas. El juego está incompleto, pero se puede jugar igual. Aprovecho esta excusa para hablar de lo que me gustaría hacer, mezclando ciencia ficción, código, fantasías, tareas pendientes, promesas dudables y reciclajes de último minuto. Para que vayamos aprendiendo a jugarlo por si algún día queremos aburrirnos en compañía y no tenemos otra excusa mejor que ésta.
+Este juego es una excusa. Hice un examen sobre un trabajo que me gustó mucho y aproveché para <i>metér</i> otro poco de creatividad en el asunto. Necesito darle espacio a mi imaginación, asi que diré en palabras lo que no alcanzo a hacer en código. Me gustan las palabras cuando invitan a imaginar cosas. El juego está incompleto, pero se puede jugar igual. Aprovecho esta excusa para hablar de lo que voy a agregarle, mezclando ciencia ficción, código, fantasías, tareas pendientes, promesas dudables y reciclajes de último minuto. Para que vayamos aprendiendo a jugarlo, por si algún día queremos aburrirnos en compañía y no tenemos otra excusa mejor que ésta.
 
 El juego se llama <i>Bul-Pul</i>. Es muy simple, se aprende rápido, se juega por instinto, sin pensarlo mucho. Es de estrategia, porque no hay azar, pero no sirve memorizarlo. Es para aprender a prueba y <i>errór</i>, para sorprender con una jugada inesperada, para prestar atención al diálogo, para cambiar de planes, para inventar sobre la marcha.
 
@@ -91,6 +91,12 @@ Sigo con la última ficción (por mí seguiría, pero se me está terminando el 
 <br>
 
 Si funcionara, si realmente abriera una posibilidad de contacto directo entre el cálculo complejo y la experiencia corporal, ¿qué posición ocuparían las máquinas? ¿qué significaría el trabajo? Siento una mezcla de ilusión y pánico, porque nada de lo que dije es ciencia ficción; porque es el presente; porque es un futuro que ya existe. Ya somos máquinas, ya trabajamos de la forma descrita; y nada es distinto, nada está mejorando. No hay afuera, el mundo es un zapallo.
+
+<br>
+
+Nada es distinto, nada está mejorando. No hay afuera, el mundo es un zapallo.
+
+<br>
 
 <br>
 
