@@ -34,12 +34,12 @@ Hay dos personas, P0 y P1. En dos de las cuatro esquinas hay un objetivo que par
  
 Abre paréntesis. Aquí apareció la primera fantasía: no hice lo de elegir la esquina en la que colocar el objetivo. O sea lo hice pero no me resultó, entonces hice un random que no funciona muy bien. Hoy se me ocurren mil formas de resolverlo, asi que la próxima versión ya tendrá esa función incorporada. Cierra paréntesis.
 
-Las dos opciones de victoria hacen que el juego sea dinámico. Un movimiento ambicioso se puede volver en una derrota segura. Pero no arriesgar y dejar a la otra persona ganar un punto en cada turno significa que también perderás pronto (en 4 turnos máximo). Hay que buscar un equilibrio entre ataque y defensa, no se puede estar quieto. 
+Las dos opciones de victoria hacen que el juego sea dinámico. Un movimiento ambicioso puede volverse una derrota segura. Pero no arriesgar y dejar a la otra persona ganar un punto en cada turno significa que también perderás pronto (en 4 turnos máximo). Hay que buscar un equilibrio entre ataque y defensa, no se puede estar quieto. 
 
 Los objetivos desaparecen como las manzanitas del "Snake". Las personas se desplazan y colisionan como bolas de pool. Cada tiro se prepara de manera similar a los juegos de pool para celulares, de esta forma:
 
 <ol>
-<li>Al presionar sobre la pantalla se guarda el punto en que se inicia el movimiento, y se activa una vista que representa los componentes del vector del tiro, estos son: magnitud, representada por diámetro del círculo móvil, y dirección, representada por el segmento que une punto de inicio y posición actual. Además aparece un círculo fijo que marca el límite de la magnitud máxima posible. 
+<li>Al presionar sobre la pantalla se guarda el punto en que se inicia el movimiento, y se activa una vista que representa los componentes del vector del tiro, estos son: magnitud, representada por diámetro del círculo móvil, y dirección, representada por el segmento que une punto de inicio y posición actual. Además se establece un círculo fijo que marca el límite de la magnitud máxima posible. 
 
 <li>Al arrastrarse el click mantenido cambiará el diámetro del círculo móvil (según la distancia respecto al punto de origen) y el segmento (según posición del desplazamiento). Si el movimiento excede la magnitud máxima, entonces el círculo móvil se equipara al círculo fijo. Si el movimiento es menor a la magnitud mínima el círculo móvil y el segmento se vuelven grisáceos.
 
