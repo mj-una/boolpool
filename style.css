@@ -7,6 +7,8 @@ body {
    padding: 0;
    background-color: rgb(240,240,240);
    text-align: CENTER;
+   user-select: none;
+   touch-action: manipulation;
  }
  canvas {
    display: block;
