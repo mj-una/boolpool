@@ -817,7 +817,7 @@ function draw() {
 
   // CAMBIO AUDIO
 
-  if (duracionVoz <= voz.currentTime() && !inicio && cambio) {
+  if (duracionVoz <= voz.currentTime() && !inicial && cambio) {
     console.log("...viene _c:" + cambio + "___" + duracionVoz + " ___" + voz.currentTime());
     console.log("CAMBIO?");
     voz.pause();
@@ -878,12 +878,13 @@ function touchEnded() {
         tiroPost = true;
         // delay(100);
 
+        if (primerTiro) primerTiro = false;
+        
         // INICIO AUDIO
     
-        if (primerTiro && inicial) {
+        if (inicial) {
           voz.play();
           inicial = false;
-          primerTiro = false;
         }
       }
     }
