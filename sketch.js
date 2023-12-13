@@ -817,6 +817,7 @@ function draw() {
   // CAMBIO AUDIO
 
   if (duracionVoz <= voz.currentTime() && cambio) {
+    console.log("...viene _c:" + cambio + "___" + duracionVoz + " ___" + voz.currentTime());
     console.log("CAMBIO?");
     voz.pause();
     fin.loop();
