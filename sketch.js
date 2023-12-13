@@ -36,6 +36,8 @@ let voz, fin;
 let inicial = true;
 let cambio = true;
 
+let clickeable = true;
+
 
 // variable provisoria width
 const med = 800; // --> actualizar segun width
@@ -815,11 +817,15 @@ function draw() {
     fin.loop();
     cambio = false;
   }
+
+  clickeable = true;
 }
 
 
 
 function touchStarted() {
+  if (!clickeable) return;
+  
   if (pantalla == 0) {
     if (!tiroPost) {
       if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
@@ -848,6 +854,8 @@ function touchStarted() {
 
 
 function touchEnded() {
+  if (!clickeable) return;
+  
   if (pantalla == 0) {
     if (tiroPre) {
       tiroPre = false;
@@ -873,6 +881,8 @@ function touchEnded() {
     }
     inputPre = false;
   }
+
+  clickeable = false;
 }
 
 
