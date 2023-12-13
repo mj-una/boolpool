@@ -688,6 +688,9 @@ function draw() {
     let tx, ty;
     tx = map(mouseX, 0, width, -width / 34, width / 34);
     ty = map(mouseY, 0, height, -width / 34, width / 34);
+
+    tx = constrain(tx, -width / 34, width / 34);
+    ty = constrain(ty, -width / 34, width / 34);
     
     circle(width / 2.575 + tx, width / 4.444 + ty, width * 8.5 / 60);
     circle(width / 2.575 + tx, width / 2.105 + ty, width * 8.5 / 60); 
