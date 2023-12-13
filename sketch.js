@@ -823,7 +823,7 @@ function draw() {
     console.log("CAMBIOOO");
   }
   else {
-    if (frameCount % 300 = 0) {
+    if (frameCount % 300 == 0) {
       if (cambio) console.log("...falta");
       else console.log("...fuee");
     }
