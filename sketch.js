@@ -830,7 +830,7 @@ function draw() {
   //     }
   //     else console.log("...fuee _c:" + cambio);
   //   }
-  }
+  // }
 
   // fin draw
   clickeable = true;
