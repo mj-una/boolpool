@@ -819,6 +819,7 @@ function draw() {
     voz.pause();
     fin.loop();
     cambio = false;
+    console.log("CAMBIOO");
   }
 
   clickeable = true;
