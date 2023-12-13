@@ -9,6 +9,7 @@ body {
    text-align: CENTER;
    user-select: none;
    touch-action: manipulation;
+   overscroll-behavior: none
  }
  canvas {
    display: block;
