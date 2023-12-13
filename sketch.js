@@ -823,14 +823,14 @@ function draw() {
     cambio = false;
     console.log("CAMBIOOO");
   }
-  // else {
-  //   if (frameCount % 300 == 0) {
-  //     if (cambio) {
-  //       console.log("...falta _c:" + cambio + "___" + duracionVoz + " ___" + voz.currentTime());
-  //     }
-  //     else console.log("...fuee _c:" + cambio);
-  //   }
-  // }
+  else {
+    if (frameCount % 300 == 0) {
+      if (cambio) {
+        console.log("...falta _c:" + cambio + "___" + duracionVoz + " ___" + voz.currentTime());
+      }
+      else console.log("...fuee _c:" + cambio);
+    }
+  }
 
   // fin draw
   clickeable = true;
