@@ -32,7 +32,7 @@ let puntaje0B, puntaje1B; // cantidad de manzanas comidas en total
 
 let victoria0, victoria1; // estado victoria
 
-let voz, fin;
+let voz, duracionVoz, fin;
 let inicial = true;
 let cambio = true;
 
@@ -79,6 +79,7 @@ function preload() {
 
   voz = loadSound("audio/narracion.mp3");
   voz.pause();
+  duracionVoz = Math.trunc(voz.duration());
   
   fin = loadSound("audio/cierre.mp3");
   fin.pause();
@@ -815,20 +816,20 @@ function draw() {
 
   // CAMBIO AUDIO
 
-  if (voz.duration() <= voz.currentTime() && cambio) {
+  if (duracionVoz <= voz.currentTime() && cambio) {
     console.log("CAMBIO?");
     voz.pause();
     fin.loop();
     cambio = false;
     console.log("CAMBIOOO");
   }
-  else {
-    if (frameCount % 300 == 0) {
-      if (cambio) {
-        console.log("...falta _c:" + cambio + "___" + voz.duration() + " ___" + voz.currentTime());
-      }
-      else console.log("...fuee _c:" + cambio);
-    }
+  // else {
+  //   if (frameCount % 300 == 0) {
+  //     if (cambio) {
+  //       console.log("...falta _c:" + cambio + "___" + duracionVoz + " ___" + voz.currentTime());
+  //     }
+  //     else console.log("...fuee _c:" + cambio);
+  //   }
   }
 
   // fin draw
@@ -889,15 +890,17 @@ function touchEnded() {
   else if (pantalla == 2 || pantalla == 3 || pantalla == 4) {
     if (inputPre && mouseX >= width / 3 && mouseX <= width * 2 / 3 &&
     mouseY >= height * 3 / 4 && mouseY <= height * 3 / 4 + height / 9) {
-      if (pantalla == 2) pantalla = 3;
-      else if (pantalla == 3) {
-        pantalla = 0;
-      }
+      
+      let p = -1;
+      if (pantalla == 2) p = 3;
+      else if (pantalla == 3) p = 0;
       else if (pantalla == 4) {
         setup();
-        pantalla = 2;
+        p = 2;
       }
+      pantalla = p;
     }
+    
     inputPre = false;
   }
 }
