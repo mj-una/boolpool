@@ -894,7 +894,7 @@ function draw() {
 
   // CAMBIO AUDIO
 
-  if (voz.currentTime() >= voz.duration() && cambio) {
+  if (voz.duration() <= voz.currentTime() && cambio) {
     voz.pause();
     fin.loop();
     cambio = false;
