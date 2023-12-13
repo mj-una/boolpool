@@ -828,6 +828,8 @@ function draw() {
       else console.log("...fuee");
     }
   }
+
+  // fin draw
   clickeable = true;
 }
 
@@ -843,13 +845,6 @@ function touchStarted() {
         entrada_x = mouseX;
         entrada_y = mouseY;
         tiroPre = true;
-
-        // INICIO AUDIO
-    
-        if (inicial) {
-          voz.play();
-          inicial = false;
-        }
       }
     }
   }
@@ -865,19 +860,26 @@ function touchStarted() {
 
 
 function touchEnded() {
-  if (!clickeable) return;
-  clickeable = false;
-
   if (!validacion) return;
   validacion = false;
+  
+  if (!clickeable) return;
+  clickeable = false;
   
   if (pantalla == 0) {
     if (tiroPre) {
       tiroPre = false;
       if (!cancelar) {
         tiroPost = true;
-        if (primerTiro) primerTiro = false;
         // delay(100);
+
+        // INICIO AUDIO
+    
+        if (primerTiro && inicial) {
+          voz.play();
+          inicial = false;
+          primerTiro = false;
+        }
       }
     }
   }
