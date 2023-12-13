@@ -824,8 +824,10 @@ function draw() {
   }
   else {
     if (frameCount % 300 == 0) {
-      if (cambio) console.log("...falta");
-      else console.log("...fuee");
+      if (cambio) {
+        console.log("...falta _c:" + cambio + "___" + voz.duration() + " ___" + voz.currentTime());
+      }
+      else console.log("...fuee _c:" + cambio);
     }
   }
 
@@ -836,7 +838,7 @@ function draw() {
 
 
 function touchStarted() {
-  if (!clickeable) return;
+  if (validacion || !clickeable) return;
   validacion = true;
   
   if (pantalla == 0) {
