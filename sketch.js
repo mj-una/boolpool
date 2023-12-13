@@ -84,7 +84,9 @@ function preload() {
 
 function setup() {
 
-  createCanvas(800, 800);
+  let lie = createCanvas(800, 800);
+  lie.parent("c");
+  
   windowResized();
 
   textFont(arialBold_d12, round(width / 12));
@@ -884,16 +886,16 @@ function windowResized() {
   let cnv = document.getElementById("defaultCanvas0");
   let mrg = 5;
 
-  pag.style.backgroundColor = "hidden";
   pag.style.overflow = "hidden";
   pag.style.display = "flex";
   pag.style.justifyContent = "center";
-  pag.style.paddingTop = mrg * 0.5 + "vh";
+  pag.style.alignItems = "center";
   pag.style.height = "100vh";
 
   if (windowWidth * height > windowHeight * width) {
-    cnv.style.height = (100 - mrg * 2) + "vh";
-    cnv.style.width = ((100 - mrg * 2) / height) * width + "vh";
+    cnv.style.marginTop = "2vh";
+    cnv.style.height = (98 - mrg * 2) + "vh";
+    cnv.style.width = ((98 - mrg * 2) / height) * width + "vh";
   }
   else {
     cnv.style.width = (100 - mrg * 2) + "vw";
