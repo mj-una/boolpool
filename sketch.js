@@ -39,6 +39,9 @@ let cambio = true;
 let clickeable = false;
 let validacion = false;
 
+let bloqueoS = false;
+let bloqueoE = false;
+
 
 // variable provisoria width
 const med = 800; // --> actualizar segun width
@@ -825,14 +828,6 @@ function draw() {
     cambio = false;
     console.log("CAMBIOOO");
   }
-  else {
-    if (frameCount % 300 == 0) {
-      if (cambio) {
-        console.log("...falta _c:" + cambio + "___" + duracionVoz + " ___" + voz.currentTime());
-      }
-      else console.log("...fuee _c:" + cambio);
-    }
-  }
 
   // fin draw
   clickeable = true;
@@ -841,8 +836,13 @@ function draw() {
 
 
 function touchStarted() {
-  if (validacion || !clickeable) return;
+  if (bloqueoS || validacion || !clickeable) return;
   validacion = true;
+  bloqueoS = true;
+  
+  setTimeout(function(){
+    bloqueoS = false;
+  }, 200);
   
   if (pantalla == 0) {
     if (!tiroPost) {
@@ -865,11 +865,17 @@ function touchStarted() {
 
 
 function touchEnded() {
-  if (!validacion) return;
+  if (bloqueoE || !validacion) return;
   validacion = false;
   
   if (!clickeable) return;
   clickeable = false;
+
+  bloqueoE = true;
+  
+  setTimeout(function(){
+    bloqueoE = false;
+  }, 200);
   
   if (pantalla == 0) {
     if (tiroPre) {
