@@ -1,8 +1,7 @@
 @font-face {
-  font-family: 'local-arial';
+  font-family: 'localArial';
   src: url('fonts/arial.ttf') format('ttf');
 }
-
 body {
    margin: 0;
    padding: 0;
@@ -16,9 +15,10 @@ body {
    margin: 0;
    margin-top: 2vh;
    text-align: CENTER;
-   font-family: 'local-arial', Arial, sans-serif;
+   font-family: 'localArial', Arial, sans-serif;
+   color: rgb(170,170,170);
 }
 a {
-   color: black;
+   color: rgb(170,170,170);
 }
 
