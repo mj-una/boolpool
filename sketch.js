@@ -812,7 +812,7 @@ function draw() {
 
   // CAMBIO AUDIO
 
-  if (voz.currentTime() >= voz.duration() && cambio) {
+  if (voz.duration() <= voz.currentTime() && cambio) {
     voz.pause();
     fin.loop();
     cambio = false;
@@ -821,7 +821,7 @@ function draw() {
 
 
 
-function touchStarted() {
+function mousePressed() {
   if (pantalla == 0) {
     if (!tiroPost) {
       if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
@@ -849,7 +849,7 @@ function touchStarted() {
 
 
 
-function touchEnded() {
+function mouseReleased() {
   if (pantalla == 0) {
     if (tiroPre) {
       tiroPre = false;
