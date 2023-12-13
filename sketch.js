@@ -79,7 +79,6 @@ function preload() {
 
   voz = loadSound("audio/narracion.mp3");
   voz.pause();
-  duracionVoz = Math.trunc(voz.duration());
   
   fin = loadSound("audio/cierre.mp3");
   fin.pause();
@@ -130,6 +129,8 @@ function setup() {
   puntaje0B = puntaje1B = 0;
   victoria0 = victoria1 = false;
 
+  duracionVoz = Math.trunc(voz.duration());
+  
   pantalla = 2; // menu
 }
 
