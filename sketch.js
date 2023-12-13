@@ -653,13 +653,6 @@ function draw() {
       text("P1", p1_x, p1_y + width * 2 / 75);
     }
     
-    // INICIO AUDIO
-    
-    if (inicial) {
-      voz.play();
-      inicial = false;
-    }
-
   } // cierra pantalla 0
   
   else if (pantalla == 2) { // ------------------------------ [2]
@@ -814,7 +807,7 @@ function draw() {
 
   // CAMBIO AUDIO
 
-  if (cambio && voz.currentTime() >= voz.duration()) {
+  if (voz.currentTime() >= voz.duration() && cambio) {
     voz.pause();
     fin.loop();
     cambio = false;
@@ -830,6 +823,13 @@ function mousePressed() {
         entrada_x = mouseX;
         entrada_y = mouseY;
         tiroPre = true;
+
+        // INICIO AUDIO
+    
+        if (inicial) {
+          voz.play();
+          inicial = false;
+        }
       }
     }
   }
