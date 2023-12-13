@@ -36,7 +36,8 @@ let voz, fin;
 let inicial = true;
 let cambio = true;
 
-let clickeable = true;
+let clickeable = false;
+let validacion = false;
 
 
 // variable provisoria width
@@ -133,6 +134,8 @@ function setup() {
 
 
 function draw() {
+
+  clickeable = false;
 
   //                    -----------( OPACIDAD MOUSE )------------
 
@@ -825,6 +828,7 @@ function draw() {
 
 function touchStarted() {
   if (!clickeable) return;
+  validacion = true;
   
   if (pantalla == 0) {
     if (!tiroPost) {
@@ -855,6 +859,10 @@ function touchStarted() {
 
 function touchEnded() {
   if (!clickeable) return;
+  clickeable = false;
+
+  if (!validacion) return;
+  validacion = false;
   
   if (pantalla == 0) {
     if (tiroPre) {
@@ -881,8 +889,6 @@ function touchEnded() {
     }
     inputPre = false;
   }
-
-  clickeable = false;
 }
 
 
