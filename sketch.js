@@ -816,12 +816,18 @@ function draw() {
   // CAMBIO AUDIO
 
   if (voz.duration() <= voz.currentTime() && cambio) {
+    console.log("CAMBIO?");
     voz.pause();
     fin.loop();
     cambio = false;
-    console.log("CAMBIOO");
+    console.log("CAMBIOOO");
   }
-
+  else {
+    if (frameCount % 300 = 0) {
+      if (cambio) console.log("...falta");
+      else console.log("...fuee");
+    }
+  }
   clickeable = true;
 }
 
