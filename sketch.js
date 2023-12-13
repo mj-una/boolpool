@@ -86,9 +86,7 @@ function setup() {
 
   let lie = createCanvas(800, 800);
   lie.parent("c");
-  lie.style("user-select", "none"); // para que no seleccione el texto al clickear doble
-  lie.style("touch-action", "manipulation"); // para que no haga zoom al tocar doble en el celu
-  
+
   windowResized();
 
   textFont(arialBold_d12, round(width / 12));
@@ -821,7 +819,7 @@ function draw() {
 
 
 
-function mousePressed() {
+function touchStarted() {
   if (pantalla == 0) {
     if (!tiroPost) {
       if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
@@ -849,7 +847,7 @@ function mousePressed() {
 
 
 
-function mouseReleased() {
+function touchEnded() {
   if (pantalla == 0) {
     if (tiroPre) {
       tiroPre = false;
