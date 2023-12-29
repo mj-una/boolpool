@@ -26,7 +26,7 @@ Martin Julio
 
 <br>
 
-Este juego es una excusa. Hice un examen sobre un trabajo que me gustó mucho y aproveché para <i>metér</i> otro poco de creatividad en el asunto. Necesito darle espacio a mi imaginación, asi que diré en palabras lo que no alcanzo a hacer en código. Me gustan las palabras cuando invitan a imaginar cosas. El código está incompleto, pero se puede jugar igual. Aprovecho esta excusa para hablar de lo que voy a agregarle, mezclando ciencia ficción, matemáticas, fantasías, tareas pendientes, promesas dudables y reciclajes de último minuto. Para que vayamos aprendiendo a jugarlo, por si algún día queremos aburrirnos en compañía y no tenemos otra excusa mejor que ésta.
+Este juego es una excusa. Hice un examen sobre un trabajo que me gustó mucho y aproveché para <i>metér</i> otro poco de creatividad en el asunto. Necesito darle espacio a mi imaginación, asi que diré en palabras lo que no alcanzo a hacer en código. Me gustan las palabras cuando invitan a imaginar cosas. El juego está incompleto, pero se puede jugar igual. Aprovecho esta excusa para hablar de lo que voy a agregarle, mezclando fantasias, suposiciones, tareas pendientes, promesas dudables y reciclajes de último minuto. Para que vayamos aprendiendo a jugarlo, por si algún día queremos aburrirnos en compañía y no tenemos otra excusa mejor que ésta.
 
 El juego se llama <i>Bul-Pul</i>. Es muy simple, se entiende rápido. Es de estrategia porque no hay azar, pero no se puede memorizar y no sirve sobrepensarlo. Es para imaginar, para intentar a prueba y <i>errór</i>, para cambiar de planes, para acomodarse sobre la marcha, para prestar atención y, sobre todo, para conversar.
 
