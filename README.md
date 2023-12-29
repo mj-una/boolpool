@@ -88,7 +88,7 @@ Paso a la ficción final (yo seguiría, pero está quedando muy largo). La conve
 
 <br>
 
-La conversación es motivo suficiente, sin embargo competimos. Si funcionara, si realmente se abriera una interfaz de contacto directo entre el cálculo complejo y la experiencia corporal, ¿qué posición ocuparían las máquinas? ¿qué significaría el trabajo? Es triste, porque nada de lo que dije es ciencia ficción; porque es el presente; porque es un futuro que ya existe. Ya somos máquinas, ya trabajamos según las formas descritas; y nada es distinto, nada está mejorando. No hay afuera, el mundo es un zapallo.
+La conversación es motivo suficiente, sin embargo competimos. Si funcionara, si realmente se abriera una interfaz de contacto entre el cálculo complejo y la experiencia corporal, ¿qué posición ocuparían las máquinas? ¿qué significaría el trabajo? Es triste, porque nada de lo que dije es ciencia ficción; porque es el presente; porque es un futuro que ya existe. Ya somos máquinas, ya trabajamos según las formas descritas; y nada es distinto, nada está mejorando. No hay afuera, el mundo es un zapallo.
 
 <br>
 
