@@ -22,19 +22,19 @@ Martin Julio
 
 <br>
 
-### <span id="narracion">Narración</span>
+### <span id="intro">Intro</span>
 
 <br>
 
-Este juego es una excusa. Hice un examen sobre un trabajo que me gustó mucho y aproveché para <i>metér</i> otro poco de creatividad en el asunto. Necesito darle espacio a mi imaginación, asi que diré en palabras lo que no alcanzo a hacer en código. Me gustan las palabras cuando invitan a imaginar cosas. El juego está incompleto, pero se puede jugar igual. Aprovecho esta excusa para hablar de lo que voy a agregarle, mezclando fantasias, suposiciones, tareas pendientes, promesas dudables y reciclajes de último minuto. Para que vayamos aprendiendo a jugarlo, por si algún día queremos aburrirnos en compañía y no tenemos otra excusa mejor que ésta.
-
-El juego se llama <i>Bul-Pul</i>. Es muy simple, se entiende rápido. Es de estrategia porque no hay azar, pero no se puede memorizar y no sirve sobrepensarlo. Es para imaginar, para intentar a prueba y <i>errór</i>, para cambiar de planes, para acomodarse sobre la marcha, para prestar atención, y, sobre todo, para conversar.
+Este juego es una excusa. Tenía que hacer un examen sobre algo, y aproveché de hacerlo sobre un trabajo práctico que no pude terminar. Necesito darle espacio a mi imaginación, asi que describo con palabras lo que no alcancé a hacer en código. Me gustan las palabras cuando invitan a imaginar cosas. Aprovecho el espacio para hablar de lo que agregaré en un próxima versión, mezclando fantasias, suposiciones, promesas pendientes y reciclajes de último minuto. Para que vayamos aprendiendo a jugar, por si algún día queremos aburrirnos en compañía y no tenemos otra excusa mejor que ésta.
 
 <br>
 
 #### <span id="descripcion">Descripción</span>
 
 <br>
+
+El juego se llama <i>Bul-Pul</i>. Es muy simple, se entiende rápido. Es de estrategia porque no hay azar, pero no se puede memorizar y no sirve sobrepensarlo. Es para imaginar, para intentar a prueba y <i>errór</i>, para cambiar de planes, para acomodarse sobre la marcha, para prestar atención, y, sobre todo, para conversar.
 
 Hay dos personas, P0 y P1. En dos de las cuatro esquinas hay un objetivo que parpadea. Cada vez que una persona toca un objetivo durante su turno, suma un punto. Cada vez que una persona toca un objetivo (sea su turno o no), el objetivo desaparece. Al final del turno se colocan nuevamente los objetivos. En algunos casos será la propia persona quién decida dónde colocar el objetivo, en otros casos se colocará automáticamente siguiendo el reglamento: (primero.) es requisito que las esquinas no estén obstruídas por una persona; (segundo.) se priorizan las esquinas que no hayan tenido un objetivo previamente; (tercero.) si finalmente queda más de una opción, entonces la persona decide. Modos de victoria: gana quién haga cuatro puntos en total, o quién haga dos puntos consecutivos en un mismo turno. Cada victoria es una ronda. Se puede jugar al mejor de cierta cantidad de rondas.
 
@@ -60,7 +60,7 @@ Ahora aparece otra fantasía, esta vez un poco más compleja, pero aún dentro d
 
 <i>Naturál</i> y forzado son solamente dos opciones porque todo los casos en que se puede decidir una relocalización son reducibles a: (caso 1.) solo desaparece un objetivo y las dos esquinas vacías están sin obstruír, por lo que habrán dos posiciones posibles para elegir; o (caso 2.) desaparecen los dos objetivos pero una de las personas está sobre una de las esquinas vacías, por lo que el primer objetivo ocupará la otra esquina vacía y para el segundo habrá que elegir entre una de las dos esquinas que se encontraban ocupadas previamente. En ambos casos existe una posición predicha para ser ocupada. Se toma esa posición predicha como referencia para determinar si la relocalización se hace en la esquina siguiente en sentido horario, llamada <i>naturál</i>, o en la subsiguiente, llamada forzada (que se salta a la posición <i>naturál</i>). En cualquier otro caso no se llegará a hacer una elección, porque con las dos primeras reglas bastará para asignar automáticamente las posiciones. Las reglas eran éstas: (primero.) es requisito que las esquinas no estén obstruídas por una persona; (segundo.) se priorizan las esquinas que no hayan estado ocupadas previamente; (tercero.) si finalmente queda más de una opción, entonces la persona decide. Por ejemplo, si se diera el caso en que desaparecieran los dos objetivos, y las dos esquinas vacías se encuentran obstruídas, entonces los objetivos volverán a aparecer en las mismas esquinas que se encontraban. De forma similar se pueden deducir todos los demás casos. Aclaración: Los nombres <i>naturál</i> y forzado y la lógica de cómo se traduce la información no son para que las personas lo tengan en cuenta al jugar, sino para entender el funcionamiento interno del código fuente.
 
-Con todo esto en mente, se tiene que cada mensaje transmite información precisa sobre magnitud en porcentaje, sobre dirección en grados y, si sucede, sobre relocalización forzada del objetivo. Se pueden hacer hasta algo menos de 72.200 tiros diferentes por cada jugada; y, con un mensaje fácil de oír y decir, se puede codificar y decodificar toda la información necesaria para que una persona le comunique a otra específicamente qué tiro hizo. Las ideas que describo las puedo hacer, y las incluiré en la próxima versión. Por ahora lo resolveré con condicionales y bucles, pero me gustaría aprender sobre expresiones regulares para que sea un código más eficiente.
+Con todo esto en mente, se tiene que cada mensaje transmite información precisa sobre magnitud en porcentaje, sobre dirección en grados y, si sucede, sobre relocalización forzada del objetivo. Se pueden hacer hasta algo menos de 72.200 tiros diferentes por cada jugada; y, con un mensaje fácil de oír y decir, se puede codificar y decodificar toda la información necesaria para que una persona le comunique a otra específicamente qué tiro hizo. Las ideas que describo las puedo hacer, y las incluiré en la próxima versión. Por ahora lo resolveré con condicionales y bucles, pero me gustaría aprender a usar expresiones regulares para que sea un código más eficiente.
 
 <br>
 
@@ -109,8 +109,6 @@ Nada es distinto, nada está mejorando. No hay afuera, el mundo es un zapallo.
 Palabras modificadas para el lector de pantalla:
 
 <ul>
- 
-<li>metér  →  meter
 
 <li>errór  →  error
 
