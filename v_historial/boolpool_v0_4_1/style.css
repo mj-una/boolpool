@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'localArial';
+  src: url('fonts/arial.ttf') format('ttf');
+}
+body {
+   margin: 0;
+   padding: 0;
+   background-color: rgb(240,240,240);
+   text-align: CENTER;
+   user-select: none;
+   touch-action: manipulation;
+   overscroll-behavior: none
+ }
+ canvas {
+   display: block;
+ }
+ footer {
+   padding: 0;
+   margin: 0;
+   margin-top: 2vh;
+   font-family: 'localArial', Arial, sans-serif;
+   color: rgb(170,170,170);
+}
+a {
+   color: rgb(170,170,170);
+}
+
